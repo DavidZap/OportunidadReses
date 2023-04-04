@@ -1,7 +1,4 @@
 import pandas as pd
-# import plotly.graph_objs as go
-# from plotly.subplots import make_subplots
-# import plotly.express as px
 import streamlit as st
 from logicas import calcular_beneficio_integracion
 from GuardarResultados import guardar
@@ -20,7 +17,6 @@ Precio_KG_Res_Gorda_n12= col0.number_input('Precio por Kg Res Gorda',min_value=1
 Precio_KG_Res_Flaca_n= col0.number_input('Precio por Kg Res Flaca Integrada',min_value=1000, max_value=20000, value=7486 ,step=100)
 
 Peso_Inicial_Res_n= col1.number_input('Peso inicial kg res Flaca',min_value=150, max_value=400, value=250 ,step=20)
-# Por_Ganancia_Peso= col1.number_input('Por_Ganancia_Peso',min_value=0, max_value=500, value=0 ,step=100)
 Por_Beneficio_Integrado= col1.slider("% Costo Integración", 0., 1., 0.6)
 
 Peso_Final_Res_n12= col2.number_input('Peso final kg res Flaca',min_value=150, max_value=600, value=400 ,step=20)
@@ -79,7 +75,6 @@ with st.expander('Escenario Valorizado 2'):
     Precio_KG_Res_Flaca_n_e2= col0.number_input('Precio por Kg Res Flaca Integrada e2',min_value=1000, max_value=20000, value=7486 ,step=100)
 
     Peso_Inicial_Res_n_e2= col1.number_input('Peso inicial kg res Flaca e2',min_value=150, max_value=400, value=250 ,step=20)
-    # Por_Ganancia_Peso= col1.number_input('Por_Ganancia_Peso',min_value=0, max_value=500, value=0 ,step=100)
     Por_Beneficio_Integrado_e2= col1.slider("% Costo Integración e2", 0., 1., 0.6)
 
     Peso_Final_Res_n12_e2= col2.number_input('Peso final kg res Flaca e2',min_value=150, max_value=600, value=400 ,step=20)

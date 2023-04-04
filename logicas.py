@@ -8,7 +8,7 @@ def calcular_beneficio_integracion(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_
     Costo_Servicio_Finca = Por_Beneficio_Integrado * (Valor_Res_Gorda-Valor_Res_Flaca_Inversion)
     Gasto_Operativo = Gasto_Operativo_Anual/Cantidad_Reses
     Utilidad_Neta=Utilidad_Bruta-Costo_Servicio_Finca-Gasto_Operativo-Gasto_Transporte
-    Impuesto= 0.3 * Utilidad_Neta
+    Impuesto= 0.27 * Utilidad_Neta
     Gasto_Transporte_Total = Gasto_Transporte * Cantidad_Reses_Simular
     UODI = Utilidad_Neta-Impuesto
     ROIC = UODI / Valor_Res_Flaca_Inversion
