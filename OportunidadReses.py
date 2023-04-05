@@ -121,7 +121,7 @@ with st.expander('Escenario Valorizado 2'):
     if EVA > EVA_e2:
         Eva1Eva2 = (abs(EVA)-abs(EVA_e2))
     else:
-        Eva1Eva2 = (abs(EVA_e2)-abs(EVA))
+        Eva1Eva2 = abs((abs(EVA_e2)-abs(EVA)))
 
     col0,col1,col2= st.columns(3)
     col1.metric(label="Escenario 1 v.s Escenario 2", value="${:,.0f}".format(Eva1Eva2))
