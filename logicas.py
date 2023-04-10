@@ -21,7 +21,8 @@ def calcular_beneficio_integracion(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_
     Beneficio = (Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular-Costo_Res_IntegradaKG)/(Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular)
     Beneficio_Integración = (Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular-Costo_Res_IntegradaKG)
     if caso == "metricas":
-        return(Beneficio,Valor_Res_Flaca_Inversion,UODI,Valor_Res_Gorda,ROIC, Utilidad_Neta,EVA,Costo_Capital)
+        
+        return (Valor_Res_Flaca_Inversion,Valor_Res_Gorda,Utilidad_Neta,UODI,Costo_Capital,EVA,Beneficio,ROIC)
     else:
         variables_calculadas= {
         "Peso_Final_Merma": Peso_Final_Merma,

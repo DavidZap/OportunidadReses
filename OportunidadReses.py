@@ -44,11 +44,10 @@ def mostrar_metricas(calculos, valores,columns):
         col.metric(label=calculos[j+1], value=valores[j+1])
         j +=2
         
-calculos = ["Beneficio", "Valor Res Flaca (Inversión)", "UODI", "Valor Res Gorda", 
-          "ROIC", "Utilidad Neta", "EVA", f"Costo de Capital: {'{:,.0f}%'.format(Tasa_Costo_Capital*100)}"]
-valores = ["{:.0%}".format(resultado[0]), "${:,.0f}".format(resultado[1]), "${:,.0f}".format(resultado[2]), 
-          "${:,.0f}".format(resultado[3]), "{:.0%}".format(resultado[4]), "${:,.0f}".format(resultado[5]), 
-          "${:,.0f}".format(resultado[6]), "${:,.0f}".format(resultado[7])]
+calculos = ["Valor Res Flaca (Inversión)","Valor Res Gorda","Utilidad Neta","UODI",f"Costo de Capital: {'{:,.0f}%'.format(Tasa_Costo_Capital*100)}","EVA", "Beneficio","ROIC" ]
+valores = ["${:,.0f}".format(resultado[0]), "${:,.0f}".format(resultado[1]), "${:,.0f}".format(resultado[2]), 
+          "${:,.0f}".format(resultado[3]), "${:,.0f}".format(resultado[4]), "${:,.0f}".format(resultado[5]), 
+          "{:.0%}".format(resultado[6]), "{:.0%}".format(resultado[7])]
 mostrar_metricas(calculos, valores,columns)
 
 csv = guardar(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_n,Peso_Inicial_Res_n,Por_Beneficio_Integrado,Peso_Final_Res_n12,Gasto_Operativo_Anual,Cantidad_Reses,Gasto_Transporte,Tasa_Costo_Capital,Cantidad_Reses_Simular,"guardar")
@@ -95,12 +94,11 @@ with st.expander('Escenario Valorizado 2'):
     EVA_e2=resultado2[6]
 
     columns = st.columns(4)
-
-    calculos2 = ["Beneficio e2", "Valor Res Flaca (Inversión) e2", "UODI e2", "Valor Res Gorda e2", 
-              "ROIC e2", "Utilidad Neta e2", "EVA e2", f"Costo de Capital: {'{:,.0f}%'.format(Tasa_Costo_Capital*100)} e2"]
-    valores2 = ["{:.0%}".format(resultado2[0]), "${:,.0f}".format(resultado2[1]), "${:,.0f}".format(resultado2[2]), 
-              "${:,.0f}".format(resultado2[3]), "{:.0%}".format(resultado2[4]), "${:,.0f}".format(resultado2[5]), 
-              "${:,.0f}".format(resultado2[6]), "${:,.0f}".format(resultado2[7])]
+    
+    calculos2 = ["Valor Res Flaca (Inversión) e2","Valor Res Gorda e2","Utilidad Neta e2","UODI e2",f"Costo de Capital: {'{:,.0f}%'.format(Tasa_Costo_Capital*100)}","EVA e2", "Beneficio e2","ROIC e2" ]
+    valores2 = ["${:,.0f}".format(resultado2[0]), "${:,.0f}".format(resultado2[1]), "${:,.0f}".format(resultado2[2]), 
+          "${:,.0f}".format(resultado2[3]), "${:,.0f}".format(resultado2[4]), "${:,.0f}".format(resultado2[5]), 
+          "{:.0%}".format(resultado2[6]), "{:.0%}".format(resultado2[7])]
 
     mostrar_metricas(calculos2, valores2, columns)
     
