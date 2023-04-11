@@ -1,6 +1,6 @@
-def calcular_beneficio_integracion(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_n,Peso_Inicial_Res_n,Por_Beneficio_Integrado,Peso_Final_Res_n12,Gasto_Operativo_Anual,Cantidad_Reses,Gasto_Transporte,Tasa_Costo_Capital,Cantidad_Reses_Simular,caso):
+def calcular_beneficio_integracion(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_n,Peso_Inicial_Res_n,Por_Beneficio_Integrado,Peso_Final_Res_n12,Gasto_Operativo_Anual,Cantidad_Reses,Gasto_Transporte,Tasa_Costo_Capital,Cantidad_Reses_Simular,Tasa_merma,caso):
     
-    Peso_Final_Merma = Peso_Final_Res_n12 * 0.935
+    Peso_Final_Merma = Peso_Final_Res_n12 * (1-Tasa_merma) #0.935
     Valor_Res_Flaca_Inversion = Precio_KG_Res_Flaca_n * Peso_Inicial_Res_n * Cantidad_Reses_Simular
     Valor_Res_Gorda = Precio_KG_Res_Gorda_n12*Peso_Final_Res_n12 * Cantidad_Reses_Simular
     Valor_Res_Gorda_con_Merma = Precio_KG_Res_Gorda_n12*Peso_Final_Merma * Cantidad_Reses_Simular
@@ -19,7 +19,7 @@ def calcular_beneficio_integracion(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_
     Costo_Res_IntegradaKG =Costo_Res_Integrada/Peso_Final_Merma
 
     Beneficio = (Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular-Costo_Res_IntegradaKG)/(Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular)
-    Beneficio_Integración = (Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular-Costo_Res_IntegradaKG)
+    # Beneficio_Integración = (Precio_KG_Res_Gorda_n12*Cantidad_Reses_Simular-Costo_Res_IntegradaKG)
     if caso == "metricas":
         
         return (Valor_Res_Flaca_Inversion,Valor_Res_Gorda,Utilidad_Neta,UODI,Costo_Capital,EVA,Beneficio,ROIC)
@@ -41,8 +41,8 @@ def calcular_beneficio_integracion(Precio_KG_Res_Gorda_n12, Precio_KG_Res_Flaca_
         "EVA": EVA,
         "Costo_Res_Integrada": Costo_Res_Integrada,
         "Costo_Res_IntegradaKG": Costo_Res_IntegradaKG,
-        "Beneficio": Beneficio,
-        "Beneficio_Integración": Beneficio_Integración }
+        "Beneficio": Beneficio}
+        # "Beneficio_Integración": Beneficio_Integración }
         
         return variables_calculadas
     
